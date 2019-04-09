@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1><div id="time">0</div></h1>
+</center>
+<center>
+    <button onclick="start()"><img src="play.png" width="50"></button>
+    <button onclick="pause()"><img src="pause.png" width="50"></button>
+    <button onclick="stop()"><img src="stop.png" width="50"></button>
+</center>
+</body>
+<script>
+    let i = 0;
+    let timer = null;
+    let start = ()=>{
+        clearInterval(timer)
+        i = 0;
+        timer = setInterval(()=>{
+            i += 1;
+            document.getElementById('time').innerHTML = i;
+        },1000)
+    }
+    let pause = ()=>{
+        clearInterval(timer)
+    }
+    let stop = ()=>{
+        clearInterval(timer)
+        i = 0;
+        document.getElementById('time').innerHTML = i;
+    }
+</script>
+</html>
